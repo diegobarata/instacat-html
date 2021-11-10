@@ -5,7 +5,7 @@
 
    // Realiza a consulta no banco de dados
    include "conectasql.inc";
-   $sql = "SELECT * FROM usuarios WHERE email = '$email';";
+   $sql = "SELECT * FROM usuario WHERE email = '$email';";
    $res = mysqli_query($mysqli, $sql);
 
    if(mysqli_num_rows($res) != 1){ // testa se não encontrou o email
