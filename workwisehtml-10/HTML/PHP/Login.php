@@ -21,7 +21,7 @@
        }
        else{ // usuário e senha corretos, abre a sessão
            session_start();
-           $_SESSION["username"] = $username;
+           $_SESSION["email"] = $email;
            $_SESSION["senha"] = $senha;
            // direciona à página inicial
            header("Location: index.html");
