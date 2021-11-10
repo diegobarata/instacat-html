@@ -35,10 +35,8 @@
             $senha_cript = password_hash($senha, PASSWORD_DEFAULT);
             $sql = "INSERT INTO usuario (senha,nome,email)";
             $sql .= "VALUES ('$senha_cript','$nome','$email');";  
-            mysqli_query($mysqli,$sql);  
-            header("sign-in.html"); 
-            echo "Cadastrado com sucesso";
-            mysqli_close($mysqli); 
+            mysqli_query($mysqli,$sql);   
+            header("Location: sign-in.html");  
         }
     }
     /*elseif($operacao == "exibir"){
@@ -126,6 +124,7 @@
         else{
             echo "<br><a href='altera.php?cod_usuario=".$usuario["cod_usuario"]."'>Voltar para Alterar usuário</a>";
         }
-    }
+    } 
+    mysqli_close($mysqli);
    
 ?>
