@@ -52,22 +52,18 @@
             echo "<a href='altera.php?cod_usuario=".$usuario["cod_usuario"]."'>Alterar usuário</a>";
             echo "<br>----------------------------------<br>";
         }
-    }
+    }*/
      elseif($operacao == "buscar"){
-        $username = $_POST["username"];
-        $sql = "SELECT * FROM usuarios WHERE username like '%$username%';";
+        $nome = $_POST["nome"];
+        $sql = "SELECT * FROM usuarios WHERE nome like '%$nome%';";
         $res = mysqli_query($mysqli,$sql);
         $linhas = mysqli_num_rows($res);
         for($i=0; $i < $linhas; $i++){
             $usuario = mysqli_fetch_array($res);
-            echo "Username: ".$usuario["username"]."<br>";
-            echo "Senha: ".$usuario["senha_cript"]."<br>";
             echo "Nome: ".$usuario["nome"]."<br>";
-            echo "Idade: ".$usuario["idade"]."<br>";
-            echo "Email: ".$usuario["email"]."<br>";
             echo "----------------------------------<br>";
         }
-    }*/
+    }
     elseif($operacao == "atualizar"){
         $cod_usuario = $_POST["cod_usuario"];
         $senha_atual = $_POST["senha_atual"];
