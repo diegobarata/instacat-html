@@ -1,5 +1,4 @@
 <?php
-   include "cadastrar.php";
    // Recebe os campos do formulário
    $email = $_POST["email"];
    $senha = $_POST["senha"];
