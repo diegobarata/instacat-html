@@ -33,14 +33,16 @@
         // VERIFICA SE NÃO HOUVE ERRO 
         if($erro == 0) {
             $senha_cript = password_hash($senha, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO usuarios (senha_cript,nome,email)";
+            $sql = "INSERT INTO usuario (senha_cript,nome,email)";
             $sql .= "VALUES ('$senha_cript','$nome','$email');";  
             mysqli_query($mysqli,$sql);  
             header("sign-in.html"); 
+            echo "Cadastrado com sucesso";
+            mysqli_close($mysqli); 
         }
     }
     /*elseif($operacao == "exibir"){
-        $sql = "SELECT * FROM usuarios;";
+        $sql = "SELECT * FROM usuario;";
         $res = mysqli_query($mysqli,$sql);
         $linhas = mysqli_num_rows($res);
         for($i=0; $i < $linhas; $i++){
@@ -56,7 +58,7 @@
     }*/
      elseif($operacao == "buscar"){
         $nome = $_POST["nome"];
-        $sql = "SELECT * FROM usuarios WHERE nome like '%$nome%';";
+        $sql = "SELECT * FROM usuario WHERE nome like '%$nome%';";
         $res = mysqli_query($mysqli,$sql);
         $linhas = mysqli_num_rows($res);
         for($i=0; $i < $linhas; $i++){
@@ -74,7 +76,7 @@
         $email = $_POST["email"];
         $erro = 0;
 
-        $sql = "SELECT * FROM usuarios WHERE cod_usuario = $cod_usuario;";
+        $sql = "SELECT * FROM usuario WHERE cod_usuario = $cod_usuario;";
         $res = mysqli_query($mysqli,$sql);
         $usuario = mysqli_fetch_array($res);
 
@@ -114,7 +116,7 @@
         // VERIFICA SE NÃO HOUVE ERRO 
         if($erro == 0) {
             $senha_cript = password_hash($senha_nova, PASSWORD_DEFAULT);
-            $sql = "UPDATE usuarios SET senha_cript = '$senha_cript', nome = '$nome',";
+            $sql = "UPDATE usuario SET senha_cript = '$senha_cript', nome = '$nome',";
             $sql .= "email = '$email'";
             $sql .= "WHERE cod_usuario = $cod_usuario;";  
             mysqli_query($mysqli,$sql);  
@@ -125,5 +127,5 @@
             echo "<br><a href='altera.php?cod_usuario=".$usuario["cod_usuario"]."'>Voltar para Alterar usuário</a>";
         }
     }
-    mysqli_close($mysqli);
+   
 ?>
