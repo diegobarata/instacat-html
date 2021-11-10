@@ -8,7 +8,7 @@
    $sql = "SELECT * FROM usuarios WHERE email = '$email';";
    $res = mysqli_query($mysqli, $sql);
 
-   if(mysqli_num_rows($res) != 1){ // testa se não encontrou o username
+   if(mysqli_num_rows($res) != 1){ // testa se não encontrou o email
        echo "Email inválido!";
        //echo "<p><a href='sign-in.html'>Página de login</a></p>";
    }
