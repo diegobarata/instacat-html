@@ -33,7 +33,7 @@
         // VERIFICA SE NÃO HOUVE ERRO 
         if($erro == 0) {
             $senha_cript = password_hash($senha, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO usuario (senha_cript,nome,email)";
+            $sql = "INSERT INTO usuario (senha,nome,email)";
             $sql .= "VALUES ('$senha_cript','$nome','$email');";  
             mysqli_query($mysqli,$sql);  
             header("sign-in.html"); 
