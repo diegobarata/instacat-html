@@ -4,6 +4,7 @@
 
     if($operacao == "inserir"){
         $senha = $_POST["senha"];
+        $confSenha = $_POST["confSenha"];
         $nome = $_POST["nome"];
         $email = $_POST["email"];
         $erro = 0;
