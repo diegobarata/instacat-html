@@ -36,7 +36,7 @@
             $sql = "INSERT INTO usuarios (senha_cript,nome,email)";
             $sql .= "VALUES ('$senha_cript','$nome','$email');";  
             mysqli_query($mysqli,$sql);  
-            echo "<br>O usuário foi cadastrado com sucesso!"; 
+            header("sign-in.html"); 
         }
     }
     /*elseif($operacao == "exibir"){
