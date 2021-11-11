@@ -1,4 +1,5 @@
 <?php
+    include "autentica.inc";
     include "conectasql.inc";
     $operacao = $_POST["operacao"];
 
