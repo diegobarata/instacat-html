@@ -1,3 +1,3 @@
 <?php
-$mysqli = mysqli_connect("localhost","sara","0607","instacat");
+$mysqli = mysqli_connect("localhost","adm2","1234","instacat");
 ?>

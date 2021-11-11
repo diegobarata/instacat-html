@@ -21,6 +21,6 @@ CREATE TABLE Postagem (
     FOREIGN KEY (Autor) REFERENCES Usuario(id_usuario)
 );
 
-/*CREATE USER 'sara'@'localhost' IDENTIFIED BY '0607';
-GRANT ALL PRIVILEGES ON instacat.* TO 'sara'@'localhost';*/
+/*CREATE USER 'adm2'@'localhost' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON instacat.* TO 'adm2'@'localhost';*/
 

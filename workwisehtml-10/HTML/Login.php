@@ -23,7 +23,7 @@
            $_SESSION["email"] = $email;
            $_SESSION["senha"] = $usuario["senha"];
            // direciona à página inicial
-           header("Location: index.html");
+           header("Location: my-profile-feed.html");
        }
    }
    mysqli_close($mysqli);
