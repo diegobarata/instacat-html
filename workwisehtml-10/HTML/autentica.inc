@@ -21,10 +21,10 @@
         $res = mysqli_query($mysqli, $sql);
 
         if(mysqli_num_rows($res) != 1){ // testa se não encontrou o email
-         unset($_SESSION["email"]);
-         unset($_SESSION["senha"]);
-         echo "Você não fez o login!";
-         header("Location : sign-in.html");
+            unset($_SESSION["email"]);
+            unset($_SESSION["senha"]);
+            echo "Você não fez o login!";
+            header("Location : sign-in.html");
             exit;
         }
         else{
